@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Command line suite]">
+  <test name="Command line test(failed)">
+    <classes>
+      <class name="com.cucumber.MavenCucumberPrototype.TestNG.CreditCardPaymentPargoTest">
+        <methods>
+          <include name="testExcecutionStart"/>
+          <include name="testExcecutionEnd"/>
+          <include name="addItemToCart"/>
+        </methods>
+      </class> <!-- com.cucumber.MavenCucumberPrototype.TestNG.CreditCardPaymentPargoTest -->
+      <class name="com.cucumber.MavenCucumberPrototype.TestNG.AddItemToCartTest">
+        <methods>
+          <include name="testExcecutionEnd"/>
+          <include name="addItemToCart"/>
+          <include name="testExcecutionStart"/>
+        </methods>
+      </class> <!-- com.cucumber.MavenCucumberPrototype.TestNG.AddItemToCartTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->
