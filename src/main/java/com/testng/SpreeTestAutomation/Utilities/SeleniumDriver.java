@@ -1,11 +1,13 @@
 package com.testng.SpreeTestAutomation.Utilities;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+import com.gargoylesoftware.htmlunit.javascript.host.Map;
 import com.testng.SpreeTestAutomation.Enummerables.Enums.BrowserType;
 import com.testng.SpreeTestAutomation.Enummerables.Enums.LocatorType;
 import com.testng.SpreeTestAutomation.Enummerables.Enums.LogType;
@@ -60,12 +62,13 @@ public class SeleniumDriver extends TestBase
     public SeleniumDriver() throws Exception
     {
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("browser", "Firefox");
-        caps.setCapability("browser_version", "45.0");
+        caps.setCapability("browser", "Chrome");
+        caps.setCapability("browser_version", "55.0");
         caps.setCapability("os", "Windows");
         caps.setCapability("os_version", "7");
         caps.setCapability("browserstack.debug", "true");
-
+        caps.isJavascriptEnabled();
+        
         webDriver = new RemoteWebDriver(new URL(URL), caps);
         this.browserType = null;
         this.browserDriverFile = new File(" ");
@@ -91,8 +94,14 @@ public class SeleniumDriver extends TestBase
                 }
                 case Chrome:
                 {
+
+                	HashMap<String, Object> prefs = new HashMap<String, Object>();
+                	prefs.put("profile.default_content_setting_values.notifications", 2);
                 	ChromeOptions chromeOptions = new ChromeOptions();
+                	
+                	chromeOptions.setExperimentalOption("prefs", prefs);
                 	chromeOptions.addArguments("--kiosk");
+                	
                 	this.webDriver = new ChromeDriver(chromeOptions);
                     this.browserStarted = true;
                     break;
@@ -392,17 +401,17 @@ public class SeleniumDriver extends TestBase
         }
     }
     
-    public boolean ClickElementByXpathUsingJavaScript(String xpath) throws NoSuchElementException, StaleElementReferenceException, ElementNotVisibleException
+    public boolean ClickElementByIDUsingJavaScript(String id) throws NoSuchElementException, StaleElementReferenceException, ElementNotVisibleException
     {
         try
         {
-            webDriver.findElement(By.id(xpath));
+            webDriver.findElement(By.id(id));
             
-            WebElement element = this.webDriver.findElement (By.id(xpath));
+            WebElement element = this.webDriver.findElement (By.id(id));
             JavascriptExecutor executor = (JavascriptExecutor) this.webDriver;
             executor.executeScript ("arguments[0].click();" , element);
             
-            logger.printLog(LogType.INFO,"ClickElementByXpath (" + xpath + ")");
+            logger.printLog(LogType.INFO,"ClickElementByIDUsingJavaScript(" + id + ")");
             return true;
         }
         catch(NoSuchElementException e)

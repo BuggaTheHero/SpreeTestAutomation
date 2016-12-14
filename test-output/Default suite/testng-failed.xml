@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.cucumber.MavenCucumberPrototype.TestNG.CreditCardPaymentPargoTest">
+      <class name="com.testng.SpreeTestAutomation.TestNG.CreditCardPaymentPargoTest">
         <methods>
           <include name="testExcecutionStart"/>
           <include name="testExcecutionEnd"/>
           <include name="addItemToCart"/>
         </methods>
-      </class> <!-- com.cucumber.MavenCucumberPrototype.TestNG.CreditCardPaymentPargoTest -->
+      </class> <!-- com.testng.SpreeTestAutomation.TestNG.CreditCardPaymentPargoTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -123,13 +123,12 @@ public class ShippingPage extends TestBase
 		super.seleniumDriver.ClickElementByXpath(submitAddressButtonXpath());
 
 		return new ShippingPage(super.seleniumDriver);
-	}
+	} 
 	
 	public ShippingPage selectShippingMethod(TestData testData)
 	{
 		 List<WebElement> elements = null;
-		 WebElement element = null;
-		
+
 		super.seleniumDriver.Pause(5000);
 
 		
@@ -143,19 +142,16 @@ public class ShippingPage extends TestBase
 				
 				//Select a pargo point
 				super.seleniumDriver.GetWebDriver().switchTo().frame("pargo-selector-iframe");
-				super.seleniumDriver.ClickElementByXpath("//*[@id=\"points_map\"]/div/div/div[9]/div[1]/div/div[3]");
+				
+				//super.seleniumDriver.ClickElementByCssSelector("#points_map > div > div > div.gmnoprint.gm-bundled-control.gm-bundled-control-on-bottom > div:nth-child(1) > div > div:nth-child(3)");
+
+				
+				super.seleniumDriver.ClickElementByIDUsingJavaScript("pin-description-titlepup481");
 				
 				super.seleniumDriver.Pause(2000);
-				
-				elements = super.seleniumDriver.getListAllElements(LocatorType.ID, "//*[@id='points_list']//div//h4");
-				
-				if(elements.size() > 0)
-				{
-					element = elements.get(1);
-				    element.click();
-				}
-				
-				super.seleniumDriver.Pause(4000);
+
+
+
 				break;
 			}
 			case "DoorToDoor":

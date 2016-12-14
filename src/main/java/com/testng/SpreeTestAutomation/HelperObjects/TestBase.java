@@ -103,7 +103,8 @@ public class TestBase {
 	        
 			//Start webDriver
 	        if(seleniumDriver == null)
-	        	seleniumDriver = new SeleniumDriver("Dependents//chromedriver");
+	        	seleniumDriver = new SeleniumDriver();
+	        	//seleniumDriver = new SeleniumDriver("Dependents//chromedriver");
 			
 			//Start new test
 	        testResult = new TestResult();

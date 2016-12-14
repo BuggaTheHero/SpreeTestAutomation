@@ -35,11 +35,13 @@ public class Enums
     		this.description = desc;
     	}
     	
-    	public int getPosition() {                                                                                                
+    	public int getPosition() 
+    	{                                                                                                
             return position;                                                                                                         
         }
     	
-    	public String[] getDescription() {                                                                                                
+    	public String[] getDescription() 
+    	{                                                                                                
             return description;                                                                                                         
         }
     } 
@@ -60,11 +62,13 @@ public class Enums
     		this.description = desc;
     	}
     	
-    	public int getPosition() {                                                                                                
+    	public int getPosition() 
+    	{                                                                                                
             return position;                                                                                                         
     	}
     	
-    	public String[] getDescription() {                                                                                                
+    	public String[] getDescription() 
+    	{                                                                                                
             return description;                                                                                                         
         }
     } 
@@ -85,11 +89,13 @@ public class Enums
     		this.description = desc;
     	}
     	
-    	public int getPosition() {                                                                                                
+    	public int getPosition() 
+    	{                                                                                                
             return position;                                                                                                         
     	}
     	
-    	public String[] getDescription() {                                                                                                
+    	public String[] getDescription() 
+    	{                                                                                                
             return description;                                                                                                         
         }
     } 
